@@ -1,0 +1,15 @@
+#!/bin/bash
+# cd ~/metadata
+# git pull
+timeout 90 git clone ssh://git@hostname.do.main.com:7999/infra/hcom-metadata.git ~/metadata-new
+
+# if result is non equal to 0, show error
+
+ if [[ $? -ne 0 ]]; then
+    echo "job failed - git cloned failed/timedout"
+    rm -rf ~/metadata-new
+    exit 3
+ else
+# rename directory
+    cd ~ && rm -rf metadata && mv metadata-new metadata
+ fi
