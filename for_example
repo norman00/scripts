@@ -1,0 +1,26 @@
+#!/bin/bash -x
+
+#
+
+set -e
+functs="$(dirname $0)/path/to/functions"
+
+# 
+if [ -f $functs ]; then
+  . $functs
+else
+  echo "some cool error message $functs"
+  exit 1
+fi
+
+RSYNC_OPTS="--delete --times --delay-updates -aru"
+
+# 
+for APP in app1, app2, appN; do
+  for ENV in env1 env2 env3; do
+    for SERVER in $(func_server ${ENV} ${APP} 2>/dev/null); do
+      echo $SERVER
+      rsync -e "ssh -T -o Compression=no -o StrictHostKeyChecking=no -x " -P  $RSYNC_OPTS /local/dir/files ${SERVER}:/remote/${ENV}/dir
+    done
+  done
+done
