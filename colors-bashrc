@@ -1,7 +1,11 @@
 .bashrc
+mv .bash_profile .bash_profilex
 
 > Root
 export PS1="\[\e[1;38;5;198m\]¶ \u@\[\e[m\]\[\e[1;36m\]\h\[\e[m\] \W\\$ "
 
 > user
+# User specific environment and startup programs
+screenfetch
+# colors
 export PS1="\[\e[92m\]» \u@\[\e[m\]\[\e[1;36m\]\h\[\e[m\] \W\\$ "
