@@ -14,3 +14,6 @@ export PS1="\[\e[92m\]» \u@\[\e[m\]\[\e[1;36m\]\h\[\e[m\] \W\\$ "
 # dnf module install bat
 # use bat
 alias cat='bat -p --paging=never'
+
+# For ubuntu use
+# PS1="\[\e[38;5;226m\]\u\[\e[38;5;52m\]@\[\e[38;5;52m\]\h:\[\e[38;5;52m\]\$PWD\[\e[35m\]\n\[\e[38;5;17m\]» \[\e[0m\] "
