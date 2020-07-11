@@ -17,3 +17,4 @@ alias cat='bat -p --paging=never'
 
 # For ubuntu use
 # PS1="\[\e[38;5;226m\]\u\[\e[38;5;52m\]@\[\e[38;5;52m\]\h:\[\e[38;5;52m\]\$PWD\[\e[35m\]\n\[\e[38;5;17m\]» \[\e[0m\] "
+# Ref https://misc.flogisoft.com/bash/tip_colors_and_formatting
